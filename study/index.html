@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Clevergo | Study</title>
+
+        <link rel="stylesheet" type="text/css" href="/styles/global.css">
+        <link rel="stylesheet" type="text/css" href="/styles/study.css">
+    </head>
+
+    <body>
+        <h1>Study your flashcards</h1>
+
+        <div id="flashcard">
+            <h2 id="flashcard-text"></h2>
+        </div>
+
+        <button id="left-arrow">&#11013;</button>
+        <button id="flip">&#128260;</button>
+        <button id="right-arrow">&#10145;</button>
+
+        <h3 id="xp-display-container">XP:<span id="xp-display"></span></h3>
+        <h3 id="level-display-container">Level:<span id="level-display"></span></h3>
+
+        <label for="volume-input" id="volume-input-label">Music volume</label>
+        <input type="range" min="0" max="1" step="0.1" value="1" id="volume-input">
+
+        <label for="sound-fx-input" id="sound-fx-input-label">Sound effect volume</label>
+        <input type="range" min="0" max="1" step="0.1" value="1" id="sound-fx-input">
+
+        <button id="delete-flashcards">&#128465;</button>
+
+        <script src="/scripts/study.js"></script>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Clevergo | Create</title>
+
+        <link rel="stylesheet" type="text/css" href="/styles/global.css">
+    </head>
+
+    <body>
+        <h1>Create your own flashcards</h1>
+
+        <label for="question-input">Question</label>
+        <input id="question-input" autocomplete="off">
+        <br>
+        <label for="answer-input">Answer</label>
+        <input id="answer-input" autocomplete="off">
+        <br>
+        <button id="create-flashcard">Create flashcard</button>
+        <br>
+        <h3>Flashcards</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Question</th>
+                    <th>Answer</th>
+                </tr>
+            </thead>
+
+            <tbody id="flashcard-table">
+                
+            </tbody>
+        </table>
+        <br>
+        <button id="create-set">Create set</button>
+
+        <script src="/scripts/create.js"></script>
+    </body>
+</html>

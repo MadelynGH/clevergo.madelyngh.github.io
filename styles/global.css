@@ -1,0 +1,59 @@
+@import "fonts.css";
+
+* {
+    margin: 10px;
+}
+
+body {
+    text-align: center;
+    font-family: "Montserrat";
+}
+
+h1 {
+    font-family: "Poppins";
+    font-weight: 900;
+    font-size: 3.5em;
+    color: darkcyan;
+}
+
+input {
+    border: 1px solid darkcyan;
+    outline: none;
+    padding: 8px;
+    font-family: "Montserrat";
+    transition-duration: .2s;
+    border-radius: 8px;
+}
+
+input:focus {
+    background-color: rgb(173, 230, 215);
+}
+
+button {
+    background-color: rgb(239, 169, 233);
+    font-family: "Montserrat";
+    font-weight: bold;
+    padding: 8px;
+    border: none;
+    box-shadow: 0px 0px 10px 5px rgb(237, 237, 237);
+    transition-duration: .2s;
+    border-radius: 8px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:active {
+    box-shadow: none;
+}
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid darkcyan;
+    padding: 5px;
+}
