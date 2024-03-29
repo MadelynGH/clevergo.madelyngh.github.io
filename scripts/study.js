@@ -63,16 +63,18 @@ const updateFlashcard = function() {
 
 updateFlashcard();
 
-flashcard.addEventListener("click", function() {
+const flipFlashcard = function() {
     qOrA = (qOrA == "q") ? "a" : "q";
     localStorage.setItem("clevergo_qOrA", qOrA);
     updateFlashcard();
+}
+
+flashcard.addEventListener("click", function() {
+    flipFlashcard();
 });
 
 flipButton.addEventListener("click", function() {
-    // let qOrAToSet = (qOrA == "q") ? "a" : "q";
-    // localStorage.setItem("clevergo_qOrA", qOrAToSet);
-    // updateFlashcard();
+    flipFlashcard();
 });
 
 rightArrow.addEventListener("click", function() {
