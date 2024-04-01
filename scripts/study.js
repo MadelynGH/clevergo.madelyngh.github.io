@@ -9,6 +9,8 @@ if (localStorage.getItem("clevergo_xp") === null) {
 const flashcard = document.getElementById("flashcard");
 const flashcardText = document.getElementById("flashcard-text");
 
+const progress = document.getElementById("progress");
+
 const flipButton = document.getElementById("flip");
 const leftArrow = document.getElementById("left-arrow");
 const rightArrow = document.getElementById("right-arrow");
@@ -24,6 +26,7 @@ const set = JSON.parse(localStorage.getItem("clevergo_flashcards"));
 if (localStorage.getItem("clevergo_currentFlashcard") === null) {
     localStorage.setItem("clevergo_currentFlashcard", 0);
 }
+
 let currentFlashcard = localStorage.getItem("clevergo_currentFlashcard");
 
 if (localStorage.getItem("clevergo_qOrA") === null) {
@@ -36,6 +39,8 @@ const numOfFlashcards = Object.keys(set).length;
 
 xpDisplay.innerHTML = localStorage.getItem("clevergo_xp");
 levelDisplay.innerHTML = parseInt(parseInt(xpDisplay.innerHTML) / 300);
+
+progress.innerHTML = localStorage.getItem("clevergo_currentFlashcard") + "/" + numOfFlashcards;
 
 const updateXP = function(amount) {
     localStorage.setItem("clevergo_xp", parseInt(localStorage.getItem("clevergo_xp")) + amount);
@@ -87,6 +92,7 @@ rightArrow.addEventListener("click", function() {
             localStorage.setItem("clevergo_currentFlashcard", currentFlashcard);
             flashcard.style.visibility = "visible";
             updateFlashcard();
+            progress.innerHTML = localStorage.getItem("clevergo_currentFlashcard") + "/" + numOfFlashcards;
         }, 700);
     }
 });
@@ -101,6 +107,7 @@ leftArrow.addEventListener("click", function() {
             localStorage.setItem("clevergo_currentFlashcard", currentFlashcard);
             flashcard.style.visibility = "visible";
             updateFlashcard();
+            progress.innerHTML = localStorage.getItem("clevergo_currentFlashcard") + "/" + numOfFlashcards;
         }, 700);
     }
 });

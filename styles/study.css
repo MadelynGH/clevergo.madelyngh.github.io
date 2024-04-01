@@ -93,6 +93,11 @@ br {
     user-select: none;
 }
 
+#progress {
+    margin: .5em;
+    font-size: 2em;
+}
+
 #volume-input {
     padding: 0;
     position: fixed;
