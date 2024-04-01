@@ -40,7 +40,7 @@ const numOfFlashcards = Object.keys(set).length;
 xpDisplay.innerHTML = localStorage.getItem("clevergo_xp");
 levelDisplay.innerHTML = parseInt(parseInt(xpDisplay.innerHTML) / 300);
 
-progress.innerHTML = localStorage.getItem("clevergo_currentFlashcard") + "/" + numOfFlashcards;
+progress.innerHTML = parseInt(currentFlashcard) + 1 + "/" + numOfFlashcards;
 
 const updateXP = function(amount) {
     localStorage.setItem("clevergo_xp", parseInt(localStorage.getItem("clevergo_xp")) + amount);
@@ -87,12 +87,12 @@ rightArrow.addEventListener("click", function() {
     localStorage.setItem("clevergo_qOrA", qOrA);
     if (currentFlashcard < numOfFlashcards - 1) {
         flashcard.style.visibility = "hidden";
+        currentFlashcard ++;
         setTimeout(function() {
-            currentFlashcard ++;
             localStorage.setItem("clevergo_currentFlashcard", currentFlashcard);
             flashcard.style.visibility = "visible";
             updateFlashcard();
-            progress.innerHTML = localStorage.getItem("clevergo_currentFlashcard") + "/" + numOfFlashcards;
+            progress.innerHTML = parseInt(currentFlashcard + 1) + "/" + numOfFlashcards;
         }, 700);
     }
 });
@@ -102,12 +102,12 @@ leftArrow.addEventListener("click", function() {
     localStorage.setItem("clevergo_qOrA", qOrA);
     if (currentFlashcard > 0) {
         flashcard.style.visibility = "hidden";
+        currentFlashcard --;
         setTimeout(function() {
-            currentFlashcard --;
             localStorage.setItem("clevergo_currentFlashcard", currentFlashcard);
             flashcard.style.visibility = "visible";
             updateFlashcard();
-            progress.innerHTML = localStorage.getItem("clevergo_currentFlashcard") + "/" + numOfFlashcards;
+            progress.innerHTML = (currentFlashcard + 1) + "/" + numOfFlashcards;
         }, 700);
     }
 });
