@@ -15,6 +15,9 @@ const flipButton = document.getElementById("flip");
 const leftArrow = document.getElementById("left-arrow");
 const rightArrow = document.getElementById("right-arrow");
 
+const beginningButton = document.getElementById("beginning-button");
+const endButton = document.getElementById("end-button");
+
 const volumeInput = document.getElementById("volume-input");
 const soundFXInput = document.getElementById("sound-fx-input");
 const xpDisplay = document.getElementById("xp-display");
@@ -110,6 +113,32 @@ leftArrow.addEventListener("click", function() {
             progress.innerHTML = (currentFlashcard + 1) + "/" + numOfFlashcards;
         }, 700);
     }
+});
+
+beginningButton.addEventListener("click", function() {
+    qOrA = "q";
+    localStorage.setItem("clevergo_qOrA", qOrA);
+    flashcard.style.visibility = "hidden";
+    currentFlashcard = 0;
+    setTimeout(function() {
+        localStorage.setItem("clevergo_currentFlashcard", currentFlashcard);
+        flashcard.style.visibility = "visible";
+        updateFlashcard();
+        progress.innerHTML = (currentFlashcard + 1) + "/" + numOfFlashcards;
+    }, 700);
+});
+
+endButton.addEventListener("click", function() {
+    qOrA = "q";
+    localStorage.setItem("clevergo_qOrA", qOrA);
+    flashcard.style.visibility = "hidden";
+    currentFlashcard = numOfFlashcards - 1;
+    setTimeout(function() {
+        localStorage.setItem("clevergo_currentFlashcard", currentFlashcard);
+        flashcard.style.visibility = "visible";
+        updateFlashcard();
+        progress.innerHTML = (currentFlashcard + 1) + "/" + numOfFlashcards;
+    }, 700);
 });
 
 deleteFlashcards.addEventListener("click", function() {
